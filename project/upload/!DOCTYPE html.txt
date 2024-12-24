@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <p>Items in Cart: <span id="cart-count">0</span></p>
+
+    <button id="add-to-cart">Add to Cart</button>
+    <button id="reset-cart">Reset Cart</button>
+    <button id="add-two">Add 2 Items</button>
+
+    <script>
+        // Initialize cart count
+        let cartCount = 0;
+
+        // Get the cart count display element
+        const cartCountDisplay = document.getElementById('cart-count');
+
+        // Function to update cart display
+        function updateCartDisplay() {
+            cartCountDisplay.textContent = cartCount;
+        }
+
+        // Add to Cart button functionality
+        document.getElementById('add-to-cart').addEventListener('click', function() {
+            cartCount += 1;
+            updateCartDisplay();
+        });
+
+        // Reset Cart button functionality
+        document.getElementById('reset-cart').addEventListener('click', function() {
+            cartCount = 0;
+            updateCartDisplay();
+        });
+
+        // Add 2 Items button functionality
+        document.getElementById('add-two').addEventListener('click', function() {
+            cartCount += 2;
+            updateCartDisplay();
+        });
+
+        // Initialize display on page load
+        updateCartDisplay();
+    </script>
+</body>
+</html>
